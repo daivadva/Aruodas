@@ -14,8 +14,8 @@ public class House extends Advertisement{
     private String[] heating;
 
 
-    public House(String city, String microdistrict, String street, String houseSize, String price, String phoNo, String landArea, String buildYear, String floors, String[] buildingType, String[] houseType, String equipment[], String[] heating){
-        super(city, microdistrict, street, houseSize, price,phoNo);
+    public House(String city, String microdistrict, String street, String houseSize, String price, String phoNo, String landArea, String buildYear, String floors, String[] buildingType, String[] houseType, String equipment[], String[] heating, String photo){
+        super(city, microdistrict, street, houseSize, price,phoNo,photo);
         this.landArea = landArea;
         this.buildYear = buildYear;
         this.floors = floors;
@@ -35,7 +35,6 @@ public class House extends Advertisement{
         fillHouseType();
         fillEquipment();
         selectHeating();
-      //  submit();
     }
     public void fillLandArea(){
         Utils.driver.findElement(By.id("fieldFAreaLot")).sendKeys(this.landArea);

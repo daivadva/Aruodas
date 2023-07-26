@@ -32,7 +32,6 @@ public class AdFeatures {
     public static final String kitasNamas = "Kita (nukeliamas, projektas, kt.)";
 
 
-
     public static final String murinis = "Mūrinis";
     public static final String blokinis = "Blokinis";
     public static final String monolitinis = "Monolitinis";
@@ -40,8 +39,6 @@ public class AdFeatures {
     public static final String karkasinis = "Karkasinis";
     public static final String rastinis = "Rąstinis";
     public static final String skydinis = "Skydinis";
-    public static final String kitasPastatas = "Kita";
-
 
 
     public static final String irengtas = "Įrengtas";
@@ -49,6 +46,6 @@ public class AdFeatures {
     public static final String neirengtas = "Neįrengtas";
     public static final String nebaigtasStatyti = "Nebaigtas statyti";
     public static final String pamatai = "Pamatai";
-    public static final String kitasirengimas = "Kita";
+
 
 }

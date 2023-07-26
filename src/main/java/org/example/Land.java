@@ -8,13 +8,13 @@ public class Land extends Advertisement{
 
     private String[] purposes;
 
-    public Land(String city, String microdistrict, String street, String area, String price, String phoNo, String[] purposes){
-        super(city, microdistrict, street, area, price, phoNo) ;
+    public Land(String city, String microdistrict, String street, String area, String price, String phoNo, String[] purposes, String photo){
+        super(city, microdistrict, street, area, price, phoNo,photo) ;
         this.purposes = purposes;
 
     }
 
-    public void fillAdd() {
+    public void fillAdd(){
         Utils.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=11&offer_type=1");
         this.fillGenerics();
         this.selectPurpose();

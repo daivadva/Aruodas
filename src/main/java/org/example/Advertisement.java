@@ -13,22 +13,36 @@ public class Advertisement {
     private String price;
     private String photo;
 
-    public Advertisement(String city, String microdistrict, String street, String area, String price, String phoNo){
+    public Advertisement(String city, String microdistrict, String street, String area, String price, String phoNo, String photo){
         this.city = city;
         this.microdistrict = microdistrict;
         this.street = street;
         this.phoNo = phoNo;
         this.area = area;
         this.price = price;
+        this.photo = photo;
     }
 
-    public void fillGenerics(){
+    public void fillGenerics() {
         selectRegion();
         selectMicrodistrict();
         selectStreet();
         fillArea();
         fillPrice();
         fillPhoNo();
+        selectPhoto();
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public void selectPhoto() {
+        Utils.driver.findElement(By.xpath("//*[@id=\"uploadPhotoBtn\"]/input")).sendKeys(this.getPhoto());
     }
 
     public void selectRegion() {
