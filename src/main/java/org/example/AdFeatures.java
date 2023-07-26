@@ -1,6 +1,18 @@
 package org.example;
 
-public class HouseFeatures {
+public class AdFeatures {
+    public static final String namuValda = "Namų valda";
+    public static final String daugiabuciuStatyba = "Daugiabučių statyba";
+    public static final String zemesUkio = "Žemės ūkio";
+    public static final String skypasSoduose = "Sklypas soduose";
+    public static final String miskuUkio = "Miškų ūkio";
+    public static final String pramones = "Pramonės";
+    public static final String sandeliavimo = "Sandėliavimo";
+    public static final String komercine = "Komercinė";
+    public static final String rekreacine = "Rekreacinė";
+    public static final String kita = "Kita";
+
+
     public static final String centrinis = "Centrinis";
     public static final String elektra = "Elektra";
     public static final String skystuKuru = "Skystu kuru";
@@ -10,7 +22,6 @@ public class HouseFeatures {
     public static final String dujinis = "Dujinis";
     public static final String kietuKuru = "Kietu kuru";
     public static final String saulesEnergija = "Saulės energija";
-    public static final String kita = "Kita";
 
 
     public static final String gyvenamasisNamnas = "Namas (gyvenamasis)";

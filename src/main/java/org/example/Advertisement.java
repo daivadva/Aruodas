@@ -11,6 +11,7 @@ public class Advertisement {
     private String phoNo;
     private String area;
     private String price;
+    private String photo;
 
     public Advertisement(String city, String microdistrict, String street, String area, String price, String phoNo){
         this.city = city;
@@ -29,6 +30,7 @@ public class Advertisement {
         fillPrice();
         fillPhoNo();
     }
+
     public void selectRegion() {
         if (this.getCity().equals("")){
             return;
@@ -40,7 +42,7 @@ public class Advertisement {
     }
 
     public void selectMicrodistrict() {
-        if (this.getMicrodistrict().equals("")){
+        if (this.getCity().equals("") || this.getMicrodistrict().equals("")){
             return;
         }
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[5]/span[1]/input[2]")).click();
@@ -55,7 +57,7 @@ public class Advertisement {
     }
 
     public void selectStreet() {
-        if (this.getStreet().equals("")){
+        if (this.getCity().equals("") || this.getMicrodistrict().equals("") || this.getStreet().equals("")){
             return;
         }
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[6]/span[1]/input[2]")).click();

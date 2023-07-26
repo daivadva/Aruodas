@@ -9,7 +9,7 @@ public class Land extends Advertisement{
     private String[] purposes;
 
     public Land(String city, String microdistrict, String street, String area, String price, String phoNo, String[] purposes){
-        super(city, microdistrict, street, area, price,phoNo) ;
+        super(city, microdistrict, street, area, price, phoNo) ;
         this.purposes = purposes;
 
     }

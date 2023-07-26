@@ -35,7 +35,7 @@ public class House extends Advertisement{
         fillHouseType();
         fillEquipment();
         selectHeating();
-       submit();
+      //  submit();
     }
     public void fillLandArea(){
         Utils.driver.findElement(By.id("fieldFAreaLot")).sendKeys(this.landArea);
@@ -48,7 +48,6 @@ public class House extends Advertisement{
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/div/span/input")).sendKeys(this.floors);
     }
     public void fillbuildingType(){
-       // Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[17]/div/div[1]/div[2]")).click();
         for (int i = 0; i < buildingType.length; i++) {
             switch (buildingType[i]) {
                 case "Namas (gyvenamasis)":
@@ -74,7 +73,6 @@ public class House extends Advertisement{
     }
 
     public void fillHouseType(){
-      //  Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[18]/div/div[1]/div[2]")).click();
         for (int i = 0; i < houseType.length; i++) {
             switch (houseType[i]) {
                 case "Mūrinis":
@@ -106,7 +104,6 @@ public class House extends Advertisement{
     }
 
     public void fillEquipment(){
-     //  Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[19]/div/div[2]/div[2]")).click();
         for (int i = 0; i < equipment.length; i++) {
             switch (equipment[i]) {
                 case "Įrengtas":
