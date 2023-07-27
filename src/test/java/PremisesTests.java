@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class PremisesTest {
+public class PremisesTests {
 
     @Test
     public void newAd(){

@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class HouseTest {
+public class HouseTests {
 
         @Test (priority = 1)
     public void deleteAdTest(){

@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class RealEstateTest {
+public class RealEstateTests {
     @Test
     public void newAd() {
         RealEstate ad = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",

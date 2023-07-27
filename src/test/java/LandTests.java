@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
-public class LandTest {
+public class LandTests {
 
     @Test (priority = 1)
     public void deleteAdTest(){
