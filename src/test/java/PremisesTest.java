@@ -13,18 +13,17 @@ import java.time.Duration;
 public class PremisesTest {
 
     @Test
-    public void newAdd(){
+    public void newAd(){
         Premises ad = new Premises("Klaipėda", "Debrecenas", "Naujakiemio g.", "10","10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG", "5",
                 new String[]{AdFeatures.pamatai},
                 new String[]{AdFeatures.maitinimo,AdFeatures.paslaugu});
-        ad.fillAdd();
-        submit();
-
+        ad.fillAd();
+        ad.submit();
     }
 
-    public void submit() {
-        Utils.driver.findElement(By.id("submitFormButton")).click();
-    }
+
+
+
 
     @BeforeClass
     public void beforeClass() {
@@ -46,4 +45,7 @@ public class PremisesTest {
             Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/label[2]")).click();
             Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/p/button")).click();
         }
+        public void submit() {
+        Utils.driver.findElement(By.id("submitFormButton")).click();
+    }
 }

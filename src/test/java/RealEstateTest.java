@@ -16,32 +16,40 @@ public class RealEstateTest {
     @Test
     public void newAd() {
         RealEstate ad = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
-                new String[]{AdFeatures.patalposPirkti});
+                AdFeatures.butaiNuomotis);
         ad.fillAd();
-//        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/input[2]")).click();
-//        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/ul/li[4]")).click();
-        submit();
+        ad.submit();
 
     }
 
     @Test
     public void adWithNoPhono() {
         RealEstate ad2 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","10000", "", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
-                new String[]{AdFeatures.patalposPirkti});
+                AdFeatures.butaiNuomotis);
         ad2.fillAd();
-        submit();
+        ad2.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[21]/span[2]"),"Neteisingas telefono numeris"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[21]/span[2]")).getText(), "Neteisingas telefono numeris");
     }
 
     @Test
     public void adWithNoPrice() {
-        RealEstate ad2 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
-                new String[]{AdFeatures.patalposPirkti});
-        ad2.fillAd();
-        submit();
+        RealEstate ad3 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
+                AdFeatures.butaiNuomotis);
+        ad3.fillAd();
+        ad3.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[20]/span[3]"),"Neteisinga kaina"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[20]/span[3]")).getText(), "Neteisinga kaina");
+    }
+
+    @Test
+    public void adWithNoObjectType() {
+        RealEstate ad4 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "","20000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
+                "");
+        ad4.fillAd();
+        ad4.submit();
+        Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[2]"),"Pasirinkite veiksmą"));
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[2]")).getText(), "Pasirinkite veiksmą");
     }
 
 
@@ -66,7 +74,6 @@ public class RealEstateTest {
             Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/p/button")).click();
         }
 
-    public void submit() {
-        Utils.driver.findElement(By.id("submitFormButton")).click();
-    }
 }
+//        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/input[2]")).click();
+//        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/ul/li[4]")).click();

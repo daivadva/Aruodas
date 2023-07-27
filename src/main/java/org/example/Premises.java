@@ -15,7 +15,7 @@ public class Premises extends Advertisement{
         this.purposes = purposes;
     }
 
-    public void fillAdd() {
+    public void fillAd() {
         Utils.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=3");
         this.fillGenerics();
         fillFloor();
