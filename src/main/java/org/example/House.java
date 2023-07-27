@@ -1,8 +1,6 @@
 package org.example;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class House extends Advertisement{
     private String landArea;
@@ -25,7 +23,7 @@ public class House extends Advertisement{
         this.heating = heating;
     }
 
-    public void fillAdd() {
+    public void fillAd() {
         Utils.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=2&offer_type=1");
         this.fillGenerics();
         fillLandArea();

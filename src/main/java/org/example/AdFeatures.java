@@ -47,5 +47,13 @@ public class AdFeatures {
     public static final String nebaigtasStatyti = "Nebaigtas statyti";
     public static final String pamatai = "Pamatai";
 
+    public static final String administracine = "Administracinė";
+    public static final String prekybos = "Prekybos";
+    public static final String viesbuciu = "Viešbučių";
+    public static final String paslaugu = "Paslaugų";
+    public static final String gamybosIrPramones = "Gamybos ir pramonės";
+    public static final String maitinimo = "Maitinimo";
+
+
 
 }
