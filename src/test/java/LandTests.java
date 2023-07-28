@@ -14,15 +14,15 @@ import java.time.Duration;
 
 public class LandTests {
 
-    @Test (priority = 1)
-    public void deleteAdTest(){
+    @Test(priority = 1)
+    public void deleteAdTest() {
         deleteAd();
     }
 
 
-    @Test (priority = 0)
-    public void newAd(){
-        Land ad = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10","10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
+    @Test(priority = 0)
+    public void newAd() {
+        Land ad = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad.fillAd();
 
     }
@@ -32,7 +32,7 @@ public class LandTests {
         Land ad2 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad2.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]"), "Įveskite bendrą plotą"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]")).getText(),"Įveskite bendrą plotą");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]")).getText(), "Įveskite bendrą plotą");
     }
 
     @Test
@@ -48,23 +48,23 @@ public class LandTests {
         Land ad4 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad4.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]"), "Neteisingas telefono numeris"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]")).getText(),"Neteisingas telefono numeris");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]")).getText(), "Neteisingas telefono numeris");
     }
 
     @Test
-    public void adWithNoPurpose(){
+    public void adWithNoPurpose() {
         Land ad5 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "+37061234567", new String[]{}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad5.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/label/span[2]"), "Pasirinkite paskirtį"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/label/span[2]")).getText(),"Pasirinkite paskirtį");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/label/span[2]")).getText(), "Pasirinkite paskirtį");
     }
 
-   @Test
-    public void adWithLetterPhoNo(){
+    @Test
+    public void adWithLetterPhoNo() {
         Land ad6 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "abcdef", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad6.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]"), "Neteisingas telefono numeris"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]")).getText(),"Neteisingas telefono numeris");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]")).getText(), "Neteisingas telefono numeris");
     }
 
     @Test
@@ -80,33 +80,16 @@ public class LandTests {
         Land ad8 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "abc", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad8.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]"), "Įveskite bendrą plotą"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]")).getText(),"Įveskite bendrą plotą");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[13]/span[3]")).getText(), "Įveskite bendrą plotą");
     }
 
     @Test
-    public void adLetterInPrice(){
+    public void adLetterInPrice() {
         Land ad9 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "abcd", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad9.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[33]/span[3]"), "Neteisinga kaina"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[33]/span[3]")).getText(), "Neteisinga kaina");
     }
-
-//    @Test
-//    public void adWrongCity() throws InterruptedException {
-//        Land ad10 = new Land("Kalapeda", "Debrecenas", "Naujakiemio g.", "", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
-//        ad10.fillAdd();
-//        Thread.sleep(5000);
-//        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[3]/span[2]")).getText(), "Pasirinkite savivaldybę");
-//    }
-
-//    @Test
-//    public void adWithNoMicrodistrict() throws InterruptedException {
-//        Land ad8 = new Land("Klaipėda", "", "Naujakiemio g.", "", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda});
-//        ad8.fillAdd();
-//  //      Thread.sleep(2000);
-//   //     Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[3]/span[2]")).getText(), "Pasirinkite savivaldybę");
-//    }
-    //pasirinkus city, mikrorajonas nėra privalomas Land dalyje
 
     @BeforeClass
     public void beforeClass() {
@@ -122,10 +105,11 @@ public class LandTests {
     public void afterClass() {
         //    driver.quit();
     }
-        public void deleteAd() {
-            Utils.driver.get("https://www.aruodas.lt/mano-aruodas/");
-            Utils.driver.findElement(By.id("deleteActionButton")).click();
-            Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/label[2]")).click();
-            Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/p/button")).click();
-        }
+
+    public void deleteAd() {
+        Utils.driver.get("https://www.aruodas.lt/mano-aruodas/");
+        Utils.driver.findElement(By.id("deleteActionButton")).click();
+        Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/label[2]")).click();
+        Utils.driver.findElement(By.xpath("/html/body/div[9]/div/div[10]/div/div/form/p/button")).click();
+    }
 }

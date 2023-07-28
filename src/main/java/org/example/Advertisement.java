@@ -13,7 +13,7 @@ public class Advertisement {
     private String price;
     private String photo;
 
-    public Advertisement(String city, String microdistrict, String street, String area, String price, String phoNo, String photo){
+    public Advertisement(String city, String microdistrict, String street, String area, String price, String phoNo, String photo) {
         this.city = city;
         this.microdistrict = microdistrict;
         this.street = street;
@@ -46,7 +46,7 @@ public class Advertisement {
     }
 
     public void selectRegion() {
-        if (this.getCity().equals("")){
+        if (this.getCity().equals("")) {
             return;
         }
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[3]/span[1]/span")).click();
@@ -56,7 +56,7 @@ public class Advertisement {
     }
 
     public void selectMicrodistrict() {
-        if (this.getCity().equals("") || this.getMicrodistrict().equals("")){
+        if (this.getCity().equals("") || this.getMicrodistrict().equals("")) {
             return;
         }
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[5]/span[1]/input[2]")).click();
@@ -71,7 +71,7 @@ public class Advertisement {
     }
 
     public void selectStreet() {
-        if (this.getCity().equals("") || this.getMicrodistrict().equals("") || this.getStreet().equals("")){
+        if (this.getCity().equals("") || this.getMicrodistrict().equals("") || this.getStreet().equals("")) {
             return;
         }
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[6]/span[1]/input[2]")).click();
@@ -85,26 +85,27 @@ public class Advertisement {
         Utils.driver.findElements(By.className("dropdown-input-values-address")).get(2).findElements(By.tagName("li")).get(rows).click();
     }
 
-    public void fillPhoNo(){
-        if (this.getPhoNo().equals("")){
+    public void fillPhoNo() {
+        if (this.getPhoNo().equals("")) {
             return;
         }
         Utils.driver.findElement(By.name("phone")).sendKeys(this.getPhoNo());
     }
 
-    public void fillArea(){
-        if (this.getArea().equals("")){
+    public void fillArea() {
+        if (this.getArea().equals("")) {
             return;
         }
         Utils.driver.findElement(By.id("fieldFAreaOverAll")).sendKeys(this.getArea());
     }
 
-    public void fillPrice(){
-        if (this.getPrice().equals("")){
+    public void fillPrice() {
+        if (this.getPrice().equals("")) {
             return;
         }
         Utils.driver.findElement(By.id("priceField")).sendKeys(this.getPrice());
     }
+
     public void submit() {
         Utils.driver.findElement(By.id("submitFormButton")).click();
     }

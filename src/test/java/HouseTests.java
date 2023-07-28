@@ -12,8 +12,8 @@ import java.time.Duration;
 
 public class HouseTests {
 
-        @Test (priority = 1)
-    public void deleteAdTest(){
+    @Test(priority = 1)
+    public void deleteAdTest() {
         deleteAd();
     }
 
@@ -26,7 +26,7 @@ public class HouseTests {
     }
 
     @Test
-    public void adWithNoHouseSize(){
+    public void adWithNoHouseSize() {
         House ad2 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "200000", "+37061234567", "10", "2022", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad2.fillAd();
         ad2.submit();
@@ -44,36 +44,36 @@ public class HouseTests {
     }
 
     @Test
-    public void adWithNoPhoNo(){
+    public void adWithNoPhoNo() {
         House ad4 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "", "10", "2022", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad4.fillAd();
         ad4.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[52]/span[2]"), "Neteisingas telefono numeris"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[52]/span[2]")).getText(),"Neteisingas telefono numeris");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[52]/span[2]")).getText(), "Neteisingas telefono numeris");
     }
 
     @Test
     public void adWithNoFloors() {
         House ad5 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad5.fillAd();
-       ad5.submit();
+        ad5.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span"), "Įveskite aukštų sk."));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span")).getText(),"Įveskite aukštų sk.");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span")).getText(), "Įveskite aukštų sk.");
     }
 
-   @Test
+    @Test
     public void adWithNoBuildYear() {
         House ad6 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad6.fillAd();
         ad6.submit();
-       Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div[1]/span[2]"), "Įveskite statybos metus"));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div[1]/span[2]")).getText(),"Įveskite statybos metus");
+        Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div[1]/span[2]"), "Įveskite statybos metus"));
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div[1]/span[2]")).getText(), "Įveskite statybos metus");
     }
 
     @Test
     public void allHouseType() {
         House ad7 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2",
-                new String[]{AdFeatures.gyvenamasisNamnas, AdFeatures.namoDalis, AdFeatures.sodoNamas,AdFeatures.sublokuotasNamas, AdFeatures.sodyba,AdFeatures.kitasNamas},
+                new String[]{AdFeatures.gyvenamasisNamnas, AdFeatures.namoDalis, AdFeatures.sodoNamas, AdFeatures.sublokuotasNamas, AdFeatures.sodyba, AdFeatures.kitasNamas},
                 new String[]{AdFeatures.skydinis},
                 new String[]{AdFeatures.dalineApdaila},
                 new String[]{AdFeatures.dujinis, AdFeatures.elektra},
@@ -103,7 +103,7 @@ public class HouseTests {
         House ad9 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2",
                 new String[]{AdFeatures.gyvenamasisNamnas},
                 new String[]{AdFeatures.skydinis},
-                new String[]{AdFeatures.dalineApdaila,AdFeatures.neirengtas,AdFeatures.nebaigtasStatyti,AdFeatures.pamatai,AdFeatures.kita,AdFeatures.irengtas},
+                new String[]{AdFeatures.dalineApdaila, AdFeatures.neirengtas, AdFeatures.nebaigtasStatyti, AdFeatures.pamatai, AdFeatures.kita, AdFeatures.irengtas},
                 new String[]{AdFeatures.dujinis, AdFeatures.elektra},
                 "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad9.fillAd();
@@ -127,7 +127,7 @@ public class HouseTests {
     }
 
     @Test
-    public void adWithNoMicrodistrict(){
+    public void adWithNoMicrodistrict() {
         House ad11 = new House("Klaipėda", "", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2",
                 new String[]{AdFeatures.gyvenamasisNamnas},
                 new String[]{AdFeatures.skydinis},
@@ -141,21 +141,21 @@ public class HouseTests {
     }
 
     @Test
-    public void adWithLetterFloor(){
-        House ad12 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "a", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra},"C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
+    public void adWithLetterFloor() {
+        House ad12 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "a", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad12.fillAd();
         ad12.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span"), "Įveskite aukštų sk."));
-        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span")).getText(),"Įveskite aukštų sk.");
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[14]/span")).getText(), "Įveskite aukštų sk.");
     }
 
     @Test
-    public void noHeatingSelected(){
+    public void noHeatingSelected() {
         House ad13 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2",
-                    new String[]{AdFeatures.gyvenamasisNamnas},
-                    new String[]{AdFeatures.skydinis},
-                    new String[]{AdFeatures.dalineApdaila},
-                    new String[]{},
+                new String[]{AdFeatures.gyvenamasisNamnas},
+                new String[]{AdFeatures.skydinis},
+                new String[]{AdFeatures.dalineApdaila},
+                new String[]{},
                 "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad13.fillAd();
         ad13.submit();

@@ -5,11 +5,11 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class RealEstate extends Advertisement{
+public class RealEstate extends Advertisement {
     private String objectType;
 
-    public RealEstate(String city, String microdistrict, String street, String houseSize, String price, String phoNo, String photo, String objectType){
-        super(city, microdistrict, street, houseSize, price,phoNo,photo);
+    public RealEstate(String city, String microdistrict, String street, String houseSize, String price, String phoNo, String photo, String objectType) {
+        super(city, microdistrict, street, houseSize, price, phoNo, photo);
         this.objectType = objectType;
     }
 
@@ -20,17 +20,16 @@ public class RealEstate extends Advertisement{
 
     }
 
-    public void fillObjectType(){
+    public void fillObjectType() {
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/input[2]")).click();
         List<WebElement> liArr = Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[1]/ul")).findElements(By.tagName("li"));
-        for(WebElement li:liArr){
-            if(li.getText().equals(this.objectType)){
+        for (WebElement li : liArr) {
+            if (li.getText().equals(this.objectType)) {
                 li.click();
                 break;
             }
         }
     }
-
 
 
 }

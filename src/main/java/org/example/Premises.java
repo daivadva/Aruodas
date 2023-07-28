@@ -2,14 +2,14 @@ package org.example;
 
 import org.openqa.selenium.By;
 
-public class Premises extends Advertisement{
+public class Premises extends Advertisement {
     private String floor;
     private String[] buildingType;
     private String[] purposes;
 
 
-    public Premises(String city, String microdistrict, String street, String area, String price, String phoNo, String photo, String floor, String[] buildingType, String[] purposes){
-        super(city, microdistrict, street, area, price,phoNo,photo);
+    public Premises(String city, String microdistrict, String street, String area, String price, String phoNo, String photo, String floor, String[] buildingType, String[] purposes) {
+        super(city, microdistrict, street, area, price, phoNo, photo);
         this.floor = floor;
         this.buildingType = buildingType;
         this.purposes = purposes;
@@ -23,11 +23,11 @@ public class Premises extends Advertisement{
         fillPurposes();
     }
 
-    public void fillFloor(){
+    public void fillFloor() {
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/span[2]/input")).sendKeys(this.floor);
     }
 
-    public void fillEquipment(){
+    public void fillEquipment() {
         for (int i = 0; i < buildingType.length; i++) {
             switch (buildingType[i]) {
                 case "Įrengtas":
@@ -52,7 +52,7 @@ public class Premises extends Advertisement{
         }
     }
 
-    public void fillPurposes(){
+    public void fillPurposes() {
         for (int i = 0; i < purposes.length; i++) {
             switch (purposes[i]) {
                 case "Administracinė":

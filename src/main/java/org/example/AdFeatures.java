@@ -66,5 +66,4 @@ public class AdFeatures {
     public static final String garazaiVietos = "Garažai/vietos";
 
 
-
 }
