@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 
 public class RealEstateTests {
-    @Test
+    @Test (groups = {"positive"})
     public void newAd() {
         RealEstate ad = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 AdFeatures.butaiNuomotis);
@@ -22,7 +22,7 @@ public class RealEstateTests {
 
     }
 
-    @Test
+    @Test (groups = {"negative.phoNo"})
     public void adWithNoPhono() {
         RealEstate ad2 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "10000", "", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 AdFeatures.butaiNuomotis);

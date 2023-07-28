@@ -20,7 +20,7 @@ public class LandTests {
     }
 
 
-    @Test(priority = 0)
+    @Test(priority = 0, groups = {"positive"})
     public void newAd() {
         Land ad = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad.fillAd();
@@ -36,15 +36,15 @@ public class LandTests {
     }
 
     @Test
-    public void adWithNoPrice() throws InterruptedException {
+    public void adWithNoPrice(){
         Land ad3 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "", "+37061234567", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad3.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[33]/span[3]"), "Neteisinga kaina"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[33]/span[3]")).getText(), "Neteisinga kaina");
     }
 
-    @Test
-    public void adWithNoPhoNo() throws InterruptedException {
+    @Test  (groups = {"negative.phoNo"})
+    public void adWithNoPhoNo() {
         Land ad4 = new Land("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "", new String[]{AdFeatures.miskuUkio, AdFeatures.namuValda}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad4.fillAd();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[34]/span[2]"), "Neteisingas telefono numeris"));

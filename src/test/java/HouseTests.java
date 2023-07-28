@@ -18,7 +18,7 @@ public class HouseTests {
     }
 
 
-    @Test(priority = 0)
+    @Test(priority = 0, groups = {"positive"} )
     public void newAdd() {
         House ad = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad.fillAd();
@@ -43,7 +43,7 @@ public class HouseTests {
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[51]/span[3]")).getText(), "Neteisinga kaina");
     }
 
-    @Test
+    @Test (groups = {"negative.phoNo"})
     public void adWithNoPhoNo() {
         House ad4 = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "", "10", "2022", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad4.fillAd();

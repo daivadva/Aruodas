@@ -14,7 +14,7 @@ import java.time.Duration;
 
 public class PremisesTests {
 
-    @Test
+    @Test (groups = {"positive"})
     public void newAd() {
         Premises ad = new Premises("Klaipėda", "Debrecenas", "Naujakiemio g.", "10", "10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG", "5",
                 new String[]{AdFeatures.pamatai},
