@@ -19,7 +19,7 @@ public class HouseTests {
 
 
     @Test(priority = 0, groups = {"positive"} )
-    public void newAdd() {
+    public void newAd() {
         House ad = new House("Klaipėda", "Debrecenas", "Naujakiemio g.", "150", "200000", "+37061234567", "10", "2022", "2", new String[]{AdFeatures.sublokuotasNamas}, new String[]{AdFeatures.skydinis}, new String[]{AdFeatures.dalineApdaila}, new String[]{AdFeatures.dujinis, AdFeatures.elektra}, "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG");
         ad.fillAd();
         ad.submit();
