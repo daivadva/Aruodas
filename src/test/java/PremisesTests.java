@@ -65,6 +65,17 @@ public class PremisesTests {
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[18]/span")).getText(), "Pasirinkite įrengimą");
     }
 
+    @Test
+    public void newAdWithNoPhoNo(){
+        Premises ad = new Premises("Klaipėda", "Debrecenas", "Naujakiemio g.", "100", "1000", "", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG", "5",
+                new String[]{AdFeatures.dalineApdaila},
+                new String[]{AdFeatures.paslaugu});
+        ad.fillAd();
+        ad.submit();
+        Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[51]/span[2]"), "Neteisingas telefono numeris"));
+        Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[51]/span[2]")).getText(), "Neteisingas telefono numeris");
+    }
+
 
     @BeforeClass
     public void beforeClass() {
