@@ -72,4 +72,8 @@ public class AdFeatures {
     public static final String pozeminis = "Požeminis";
     public static final String daugiaaukštis = "Daugiaaukštis";
 
+    public static final String pozeminejeAiksteleje = "Požeminėje aikštelėje";
+    public static final String antzeminejeAiksteleje = "Antžeminėje aikštelėje";
+    public static final String daugiaaukstejeAiksteleje = "Daugiaaukštėje aikštelėje";
+
 }

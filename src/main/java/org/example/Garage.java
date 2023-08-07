@@ -7,10 +7,10 @@ public class Garage extends Advertisement {
     private String[] purpose;
     private String number;
     private String rcNumber;
-    private String []garageType;
+    private String[] garageType;
     private String accomodates;
 
-    public Garage(String city, String microdistrict, String street, String area, String price, String phoNo, String photo, String[] purpose, String []garageType, String number, String rcNumber,String accomodates) {
+    public Garage(String city, String microdistrict, String street, String area, String price, String phoNo, String[] purpose, String[] garageType, String number, String rcNumber, String accomodates, String photo) {
         super(city, microdistrict, street, area, price, phoNo, photo);
         this.purpose = purpose;
         this.number = number;
@@ -42,38 +42,59 @@ public class Garage extends Advertisement {
         }
     }
 
-    public void fillNumber(){
+    public void fillNumber() {
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[8]/span[1]/input")).sendKeys(this.number);
     }
 
-    public void fillRCNumber(){
+    public void fillRCNumber() {
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[12]/div[1]/input")).sendKeys(this.rcNumber);
     }
 
-    public void fillGarageType(){
-        for (int i = 0; i < garageType.length; i++) {
-            switch (garageType[i]){
-                case "Mūrinis":
-                    Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[1]/div[2]")).click();
-                    break;
-                case "Geležinis":
-                    Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[2]/div[2]")).click();
-                    break;
-                case "Požeminis":
-                    Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[3]/div[2]")).click();
-                    break;
-                case "Daugiaaukštis":
-                    Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[4]/div[2]")).click();
-                    break;
-                case "Kita":
-                    Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[5]/div[2]")).click();
-                    break;
+    public void fillGarageType() {
+        if (Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/div[1]/div/label")).getText().equals("Garažas")) {
+            for (int i = 0; i < garageType.length; i++) {
+                switch (garageType[i]) {
+                    case "Mūrinis":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[1]/div[2]")).click();
+                        break;
+                    case "Geležinis":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[2]/div[2]")).click();
+                        break;
+                    case "Požeminis":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[3]/div[2]")).click();
+                        break;
+                    case "Daugiaaukštis":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[4]/div[2]")).click();
+                        break;
+                    case "Kita":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/div[5]/div[2]")).click();
+                        break;
+                }
             }
+        }
+        if (Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/div[2]/div/label")).getText().equals("Vieta automobiliui")) {
+            for (int i = 0; i < garageType.length; i++) {
+                switch (garageType[i]) {
+                    case "Požeminėje aikštelėje":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[17]/div/div[1]/div[2]")).click();
+                        break;
+                    case "Antžeminėje aikštelėje":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[17]/div/div[2]/div[2]")).click();
+                        break;
+                    case "Daugiaaukštėje aikštelėje":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[17]/div/div[3]/div[2]")).click();
+                        break;
+                    case "Kita":
+                        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[17]/div/div[4]/div[2]")).click();
+                        break;
 
+                }
+
+            }
         }
     }
 
-    public void fillAccomodates (){
+    public void fillAccomodates() {
         Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[18]/div/span/input")).sendKeys(this.accomodates);
     }
 }
