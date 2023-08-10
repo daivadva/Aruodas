@@ -13,6 +13,7 @@ public class ShortTerm extends Advertisement{
     public void fillAd(){
         Utils.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=12");
         fillGenerics();
+        fillType();
     }
 
     public void fillType() {
