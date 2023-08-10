@@ -76,4 +76,9 @@ public class AdFeatures {
     public static final String antzeminejeAiksteleje = "Antžeminėje aikštelėje";
     public static final String daugiaaukstejeAiksteleje = "Daugiaaukštėje aikštelėje";
 
+    public static final String butai = "Butai";
+    public static final String kambariai = "Kambariai";
+    public static final String sodybos = "Sodybos";
+    public static final String pokyliuSales = "Pokylių salės";
+    public static final String konferencijuSale = "Konferencijų salė";
 }
