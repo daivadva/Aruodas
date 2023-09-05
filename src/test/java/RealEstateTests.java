@@ -18,6 +18,7 @@ public class RealEstateTests {
         RealEstate ad = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "10000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 AdFeatures.butaiNuomotis);
         ad.fillAd();
+        ad.agreeTermsRealEstate();
         ad.submit();
 
     }
@@ -27,6 +28,7 @@ public class RealEstateTests {
         RealEstate ad2 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "10000", "", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 AdFeatures.butaiNuomotis);
         ad2.fillAd();
+        ad2.agreeTermsRealEstate();
         ad2.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[21]/span[2]"), "Neteisingas telefono numeris"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[21]/span[2]")).getText(), "Neteisingas telefono numeris");
@@ -37,6 +39,7 @@ public class RealEstateTests {
         RealEstate ad3 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 AdFeatures.butaiNuomotis);
         ad3.fillAd();
+        ad3.agreeTermsRealEstate();
         ad3.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[20]/span[3]"), "Neteisinga kaina"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[20]/span[3]")).getText(), "Neteisinga kaina");
@@ -47,6 +50,7 @@ public class RealEstateTests {
         RealEstate ad4 = new RealEstate("Klaipėda", "Debrecenas", "Naujakiemio g.", "", "20000", "+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
                 "");
         ad4.fillAd();
+        ad4.agreeTermsRealEstate();
         ad4.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[2]"), "Pasirinkite veiksmą"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[7]/span[2]")).getText(), "Pasirinkite veiksmą");

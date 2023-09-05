@@ -110,6 +110,26 @@ public class Advertisement {
         Utils.driver.findElement(By.id("submitFormButton")).click();
     }
 
+    public void agreeTerms(){
+        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[56]/span[1]/div/div/label/span")).click();
+    }
+
+    public void agreeTermsGarage(){
+        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[42]/span[1]/div/div/label/span")).click();
+    }
+
+    public void agreeTermsLand(){
+        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[38]/span[1]/div/div/label/span")).click();
+    }
+
+    public void agreeTermsPremises(){
+        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[55]/span[1]/div/div/label/span")).click();
+    }
+
+    public void agreeTermsRealEstate(){
+        Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[25]/span[1]/div/div/label/span")).click();
+    }
+
     public String getCity() {
         return city;
     }

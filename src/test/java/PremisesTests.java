@@ -20,6 +20,7 @@ public class PremisesTests {
                 new String[]{AdFeatures.pamatai},
                 new String[]{AdFeatures.maitinimo, AdFeatures.paslaugu});
         ad.fillAd();
+        ad.agreeTermsPremises();
         ad.submit();
     }
 
@@ -29,6 +30,7 @@ public class PremisesTests {
                 new String[]{AdFeatures.pamatai},
                 new String[]{AdFeatures.maitinimo, AdFeatures.paslaugu});
         ad.fillAd();
+        ad.agreeTermsPremises();
         ad.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[15]/span[4]"), "Įveskite bendrą plotą"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[15]/span[4]")).getText(), "Įveskite bendrą plotą");
@@ -40,6 +42,7 @@ public class PremisesTests {
                 new String[]{AdFeatures.pamatai},
                 new String[]{AdFeatures.maitinimo, AdFeatures.paslaugu});
         ad.fillAd();
+        ad.agreeTermsPremises();
         ad.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/span[4]"), "Įveskite aukštą"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[16]/div/span[4]")).getText(), "Įveskite aukštą");
@@ -60,6 +63,7 @@ public class PremisesTests {
                 new String[]{},
                 new String[]{AdFeatures.maitinimo, AdFeatures.paslaugu});
         ad.fillAd();
+        ad.agreeTermsPremises();
         ad.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[18]/span"), "Pasirinkite įrengimą"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[18]/span")).getText(), "Pasirinkite įrengimą");
@@ -71,6 +75,7 @@ public class PremisesTests {
                 new String[]{AdFeatures.dalineApdaila},
                 new String[]{AdFeatures.paslaugu});
         ad.fillAd();
+        ad.agreeTermsPremises();
         ad.submit();
         Utils.wait.until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("/html/body/div[1]/div[2]/form/ul/li[51]/span[2]"), "Neteisingas telefono numeris"));
         Assert.assertEquals(Utils.driver.findElement(By.xpath("/html/body/div[1]/div[2]/form/ul/li[51]/span[2]")).getText(), "Neteisingas telefono numeris");

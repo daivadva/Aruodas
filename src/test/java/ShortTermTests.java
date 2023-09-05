@@ -19,6 +19,15 @@ public class ShortTermTests {
         ad.submit();
     }
 
+    @Test
+    public void adWithNoPrice(){
+        ShortTerm ad = new ShortTerm("Klaipėda", "Debrecenas", "Naujakiemio g.", "150","","+37061234567", "C:\\Users\\Daiva\\Desktop\\DSC_0867.JPG",
+        new String[]{AdFeatures.sodybos});
+        ad.fillAd();
+        ad.submit();
+
+    }
+
 
 
 

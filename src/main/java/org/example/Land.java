@@ -18,7 +18,6 @@ public class Land extends Advertisement{
         Utils.driver.get("https://www.aruodas.lt/ideti-skelbima/?obj=11&offer_type=1");
         this.fillGenerics();
         this.selectPurpose();
-        submit();
 
     }
 
